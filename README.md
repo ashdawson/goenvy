@@ -8,13 +8,13 @@ $ go get github.com/ashdawson/goenvy
 ```
 
 ### Demo .env file
+Add your application configuration to a .env file in your root directory
 ```sh
 CORE_ENVIRONMENT=development
 PORT=8080
 ```
 
 ### Usage
-Add your application configuration to a .env file in your root directory
 In your go app you can simply call goenvy.Load()
 
 ```sh
