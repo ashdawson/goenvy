@@ -1,4 +1,4 @@
-package goenvy
+package goenvy_local
 
 import (
 	"bufio"
@@ -14,6 +14,13 @@ func Load() {
 	}
 	defer file.Close()
 	setEnvironVars(file)
+}
+
+func GetEnv(envValue string) (result string, err error){
+	if len(os.Getenv(envValue)) == 0 {
+		log.Fatalf("Env Var Error: %s does not exist", envValue)
+	}
+	return os.Getenv(envValue), err
 }
 
 func getSystemEnviron() map[string]string {
