@@ -1,4 +1,4 @@
-package goenvy_local
+package goenvy
 
 import (
 	"bufio"
