@@ -7,6 +7,15 @@ import (
 	"strings"
 )
 
+func HasEnvFile() bool {
+	file, err := os.Open(".env")
+	defer file.Close()
+	if err != nil {
+		return false
+	}
+	return true
+}
+
 func Load() {
 	file, err := os.Open(".env")
 	if err != nil {
