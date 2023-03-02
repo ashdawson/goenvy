@@ -25,11 +25,11 @@ func Load() {
 	setEnvironVars(file)
 }
 
-func GetEnv(envValue string) (result string, err error){
+func GetEnv(envValue string) (result string) {
 	if len(os.Getenv(envValue)) == 0 {
 		log.Fatalf("Env Var Error: %s does not exist", envValue)
 	}
-	return os.Getenv(envValue), err
+	return os.Getenv(envValue)
 }
 
 func getSystemEnviron() map[string]string {
